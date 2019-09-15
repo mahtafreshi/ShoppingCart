@@ -1,0 +1,58 @@
+<header id="header"></header>
+<section>
+  <div id="cart">
+    <header>Shopping Cart</header>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Qty</th>
+          <th>Price</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of cartItems">
+          <td>{{ item.Name }}</td>
+          <td>{{ item.Qty }}</td>
+          <td>{{ item.Price }}</td>
+          <td><a type="Cancel">x</a></td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>
+          <label>Total</label>
+          <label>$</label>
+        </td>
+      </tfoot>
+    </table>
+  </div>
+  <div id="primary">
+    <header>Add</header>
+    <form>
+      <div>
+        <label for="name">Name:</label>
+        <input id="name" type="text" placeholder="Name" />
+      </div>
+      <div>
+        <label for="qty">Qty:</label>
+        <input id="qty" type="number" placeholder="Qty" />
+      </div>
+      <div>
+        <label for="price">Price:</label>
+        <input id="price" type="number" placeholder="Price" />
+      </div>
+      <div>
+        <button type="submit" id="addItemButton">
+          Add
+        </button>
+        <button type="reset" id="cancelButton">
+          Cancel
+        </button>
+      </div>
+    </form>
+  </div>
+</section>
