@@ -12,7 +12,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let item of cartItems">
+        <tr *ngFor="let item of cartItems$ | async">
           <td>{{ item.Name }}</td>
           <td>{{ item.Qty }}</td>
           <td>{{ item.Price }}</td>
@@ -41,15 +41,37 @@
     <form>
       <div>
         <label for="name">Name:</label>
-        <input id="name" type="text" placeholder="Name" />
+        <select
+          class="form-control"
+          id="name"
+          required
+          [(ngModel)]="newItem.id"
+          name="name"
+          style="width:75%;"
+          (change)="onChangeItem($event.target.value)"
+        >
+          <option *ngFor="let product of PRODUCTS" [value]="product.id"
+            >{{ product.Name }} pn</option
+          >
+        </select>
+        <!-- <input id="name" type="text" placeholder="Name" /> -->
       </div>
       <div>
         <label for="qty">Qty:</label>
-        <input id="qty" type="number" placeholder="Qty" />
+        <input
+          type="number"
+          class="form-control"
+          id="qty"
+          required
+          placeholder="Qty"
+          [(ngModel)]="newItem.Qty"
+          name="qty"
+          min="1"
+        />
       </div>
       <div>
         <label for="price">Price:</label>
-        <input id="price" type="number" placeholder="Price" />
+        <label for="price">{{ price | currency }}</label>
       </div>
       <div class="text-align-right">
         <button
