@@ -9,3 +9,4 @@ Todo:
 - add loading/loaded control
 - add tests
 - move add/list items to an individual component
+- input valudator when Adding a new item and show error messages
