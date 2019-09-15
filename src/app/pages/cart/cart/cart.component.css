@@ -1,1 +1,164 @@
-/* No CSS *//*# sourceMappingURL=cart.component.css.map */
+section {
+  display: inline-block;
+  padding-top: 1px;
+  width: -webkit-fill-available;
+  height: 90%;
+}
+
+@media (min-width: 800px) {
+  section {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row;
+            flex-flow: row;
+  }
+}
+
+section div#cart {
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+@media (min-width: 800px) {
+  section div#cart {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+    width: 50%;
+    height: 100%;
+  }
+}
+
+section div#cart table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 0 0 2em;
+  padding-left: 10px;
+}
+
+section div#cart table thead {
+  border-bottom: 3px solid #fff;
+}
+
+section div#cart table thead th {
+  padding: 0.5em 0 0.05em;
+  font-weight: 400;
+  text-align: left;
+  font-size: 1.5em;
+}
+
+section div#cart table tbody {
+  border-bottom: 3px solid #fff;
+}
+
+section div#cart table tbody tr {
+  border-bottom: 2px solid #ddd;
+}
+
+section div#cart table tbody tr td {
+  padding: 0.75em 0;
+}
+
+section div#cart table tfoot td {
+  padding: 0.35em 0 0.35em;
+  font-size: 1.25em;
+}
+
+section div#addShoppingCartItem {
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+}
+
+@media (min-width: 800px) {
+  section div#addShoppingCartItem {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    width: 50%;
+    height: 100%;
+  }
+}
+
+section div#addShoppingCartItem div {
+  padding: 10px;
+}
+
+section div#addShoppingCartItem div label {
+  display: inline-block;
+  width: 10%;
+}
+
+section div#addShoppingCartItem div input {
+  width: 75%;
+}
+
+.text-align-right {
+  text-align: right;
+}
+
+.btn {
+  width: 100px;
+  cursor: pointer;
+}
+
+.btn-mb-hidden {
+  display: none;
+}
+
+@media (min-width: 800px) {
+  .btn-mb-hidden {
+    display: inline-block;
+  }
+}
+
+.btn-mb-12 {
+  width: 100% !important;
+}
+
+@media (min-width: 800px) {
+  .btn-mb-12 {
+    width: 100px !important;
+  }
+}
+
+.btn-remove {
+  font-size: small;
+}
+
+.danger {
+  color: red;
+}
+
+.primary {
+  color: green;
+}
+
+.card {
+  width: 91%;
+  background-color: #fff;
+  border-radius: 15px;
+  border: 1px black solid;
+  -webkit-box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  margin: 0.2em auto;
+  padding: 15px;
+}
+
+.card .cardHeader {
+  color: black;
+  font-size: 2em;
+  text-decoration: underline;
+  padding: 20px 0;
+}
+/*# sourceMappingURL=cart.component.css.map */

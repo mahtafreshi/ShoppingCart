@@ -1,0 +1,137 @@
+// parameters
+$desktop: 800px;
+$borderRadious: 15px;
+$btnWidth: 100px;
+
+$colors: (
+  primary: #fff
+);
+@function color($color-name) {
+  @return map-get($map: $colors, $key: $color-name);
+}
+// mixins
+@mixin descktop {
+  @media (min-width: #{$desktop}) {
+    @content;
+  }
+}
+
+// Sections
+section {
+  display: inline-block;
+  padding-top: 1px;
+  width: -webkit-fill-available;
+  height: 90%;
+  @include descktop() {
+    display: flex;
+    flex-flow: row;
+  }
+  // Shopping cart
+  div#cart {
+    order: 1;
+    height: fit-content;
+    @include descktop() {
+      order: 2;
+      width: 50%;
+      height: 100%;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 0 0 2em;
+      padding-left: 10px;
+      thead {
+        border-bottom: 3px solid #fff;
+        th {
+          padding: 0.5em 0 0.05em;
+          font-weight: 400;
+          text-align: left;
+          font-size: 1.5em;
+        }
+      }
+      tbody {
+        border-bottom: 3px solid #fff;
+        tr {
+          border-bottom: 2px solid #ddd;
+          td {
+            padding: 0.75em 0;
+          }
+        }
+      }
+      tfoot {
+        td {
+          padding: 0.35em 0 0.35em;
+          font-size: 1.25em;
+        }
+      }
+    }
+  }
+  div#primary {
+    order: 2;
+    @include descktop() {
+      height: fit-content;
+      order: 1;
+      width: 50%;
+      height: 100%;
+    }
+    div {
+      padding: 10px;
+      label {
+        display: inline-block;
+        width: 10%;
+      }
+      input {
+        width: 75%;
+      }
+    }
+  }
+}
+// adjustments
+.text-align-right {
+  text-align: right;
+}
+// buttons
+.btn {
+  width: $btnWidth;
+  cursor: pointer;
+}
+.btn-mb-hidden {
+  display: none;
+  @include descktop() {
+    display: inline-block;
+  }
+}
+.btn-mb-12 {
+  width: 100% !important;
+  @include descktop() {
+    width: $btnWidth !important;
+  }
+}
+.btn-remove {
+  font-size: small;
+}
+// colors
+.danger {
+  color: red;
+}
+.primary {
+  color: green;
+}
+
+// custom elements
+.card {
+  width: 91%;
+  background-color: #fff;
+  border-radius: $borderRadious;
+  border: 1px black solid;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  margin: 0.2em auto;
+  padding: 15px;
+
+  .cardHeader {
+    color: black;
+    font-size: 2em;
+    text-decoration: underline;
+    padding: 20px 0;
+  }
+}

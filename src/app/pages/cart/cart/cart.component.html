@@ -1,8 +1,8 @@
 <header id="header"></header>
 <section>
-  <div id="cart">
-    <header>Shopping Cart</header>
-    <table>
+  <div id="cart" class="card">
+    <header class="cardHeader">Shopping Cart</header>
+    <table class="carttable">
       <thead>
         <tr>
           <th>Name</th>
@@ -16,7 +16,13 @@
           <td>{{ item.Name }}</td>
           <td>{{ item.Qty }}</td>
           <td>{{ item.Price }}</td>
-          <td><a type="Cancel">x</a></td>
+          <a
+            type="Cancel"
+            id="removeItemButton"
+            class="btn btn-remove danger"
+            (click)="removeItem(item)"
+            >x</a
+          >
         </tr>
       </tbody>
       <tfoot>
@@ -24,14 +30,14 @@
         <td></td>
         <td></td>
         <td>
-          <label>Total</label>
-          <label>$</label>
+          <label>Total:</label>
+          <label>{{ total | currency }}</label>
         </td>
       </tfoot>
     </table>
   </div>
-  <div id="primary">
-    <header>Add</header>
+  <div id="primary" class="card">
+    <header class="cardHeader">Add</header>
     <form>
       <div>
         <label for="name">Name:</label>
@@ -45,11 +51,21 @@
         <label for="price">Price:</label>
         <input id="price" type="number" placeholder="Price" />
       </div>
-      <div>
-        <button type="submit" id="addItemButton">
+      <div class="text-align-right">
+        <button
+          type="button"
+          id="addItemButton"
+          class="btn btn-mb-12 primary"
+          (click)="addItem()"
+        >
           Add
         </button>
-        <button type="reset" id="cancelButton">
+        <button
+          type="button"
+          id="cancelButton"
+          class="btn btn-mb-hidden danger"
+          (click)="resetForm()"
+        >
           Cancel
         </button>
       </div>

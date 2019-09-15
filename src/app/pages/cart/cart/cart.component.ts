@@ -9,6 +9,7 @@ import { CartModel } from "src/models/cart.model";
   styleUrls: ["./cart.component.scss"]
 })
 export class CartComponent implements OnInit {
+  total: number = 0;
   cartItems: CartModel[] = [];
 
   constructor() {
@@ -19,8 +20,16 @@ export class CartComponent implements OnInit {
         Qty: i,
         Price: i * 2
       });
+      this.total = this.cartItems[i].Price * this.cartItems[i].Qty;
     }
   }
 
   ngOnInit() {}
+
+  // Remove Item from shopping Cart
+  removeItem(item: CartModel) {
+    console.log(item);
+  }
+  addItem() {}
+  resetForm() {}
 }
